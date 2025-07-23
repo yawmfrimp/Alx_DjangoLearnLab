@@ -12,4 +12,4 @@ def list_books(request):
 class LibraryDetailView(DetailView):
     """ A class based view listing all details available for a specific library """
     model = Library
-    template_name = 'relationship_apps/library_detail.html'
+    template_name = 'relationship_app/library_detail.html'
