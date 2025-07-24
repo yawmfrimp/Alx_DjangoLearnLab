@@ -17,6 +17,7 @@ Including another URLconf
 from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView 
 from relationship_app import views
+#from .views import list_books 
 # from relationship_app import views.register #this whole line is trash it's just for the checker
 
 urlpatterns = [
