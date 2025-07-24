@@ -43,17 +43,19 @@ def is_librarian(user):
     profile = getattr(user, 'profile', None)
     return bool(profile and profile.role == "Librarian")
 
-   
+'''An 'Admin' view that only users with the 'Admin' role can access.'''
 @login_required
 @user_passes_test(is_admin, login_url='login', redirect_field_name=None)
 def admin_view(request):
     return render(request, 'relationship_app/admin_view.html')
 
+'''A 'Librarian' view accessible only to users identified as 'Librarians'.'''
 @login_required
 @user_passes_test(is_librarian, login_url='login', redirect_field_name=None)
 def librarian_view(request):
     return render(request, 'relationship_app/librarian_view.html')
 
+'''A 'Memeber' view accessible only to users identified as 'Member'.'''
 @login_required
 @user_passes_test(is_member, login_url='login', redirect_field_name=None)
 def member_view(request):
