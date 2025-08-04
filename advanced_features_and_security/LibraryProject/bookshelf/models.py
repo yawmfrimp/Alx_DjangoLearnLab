@@ -14,6 +14,13 @@ class Book(models.Model):
         author = {self.author}
         publication_year = {self.publication_year}
 '''
+    class Meta:
+        permissions = [
+            ('can_view', 'Can view books available'),
+            ('can_create', 'Can create new books'),
+            ('can_edit', 'Can edit attributes of a book'),
+            ('can_delete', 'Can delete a book'),
+        ]
 class CustomUserManager(BaseUserManager):
     def create_user(self,username,email,date_of_birth,password=None):
         if not email:
